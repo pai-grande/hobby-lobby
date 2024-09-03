@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { inter, lusitana } from "@/app/ui/fonts";
 import "./globals.css";
+import { inter } from "@/components/ui/dashboard/fonts";
 
 // const inter = Inter({ subsets: ["latin"] });
 

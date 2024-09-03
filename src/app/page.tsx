@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { lusitana } from "./ui/fonts";
+import { lusitana } from "../components/ui/dashboard/fonts";
 <h1 className="text-blue-500">I'm blue!</h1>;
 
 export default function Home() {
