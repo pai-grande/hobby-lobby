@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { lusitana } from "../components/ui/dashboard/fonts";
+import SideNav from "@/components/ui/dashboard/sidenav";
 <h1 className="text-blue-500">I'm blue!</h1>;
 
 export default function Home() {
@@ -47,7 +48,7 @@ export default function Home() {
           priority
         />
       </div>
-
+      <SideNav />
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
