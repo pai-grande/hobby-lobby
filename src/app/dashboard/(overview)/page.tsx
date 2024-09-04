@@ -1,15 +1,16 @@
-import LatestInvoices from "@/components/ui/dashboard/latest-invoices";
-import RevenueChart from "@/components/ui/dashboard/revenue-chart";
-import { lusitana } from "@/components/ui/dashboard/fonts";
-import CardWrapper, { Card } from "@/components/ui/dashboard/cards";
+import LatestInvoices from "@/components/ui/tutorial/latest-invoices";
+import RevenueChart from "@/components/ui/tutorial/revenue-chart";
+import { lusitana } from "@/components/ui/tutorial/fonts";
+import CardWrapper, { Card } from "@/components/ui/tutorial/cards";
 import { fetchCardData } from "../../lib/data";
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import {
   LatestInvoicesSkeleton,
   RevenueChartSkeleton,
 } from "@/components/ui/skeletons";
+import { Suspense } from "react";
 
-// Card wrapper : multiple components load in at the same time
+// Card wrapper : multiple components load in at the same time (like sections)
 
 export default async function Page() {
   return (

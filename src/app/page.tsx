@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { lusitana } from "../components/ui/dashboard/fonts";
-import SideNav from "@/components/ui/dashboard/sidenav";
+import { lusitana } from "../components/ui/tutorial/fonts";
+import SideNav from "@/components/ui/tutorial/sidenav";
 <h1 className="text-blue-500">I'm blue!</h1>;
 
 export default function Home() {
