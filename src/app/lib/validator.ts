@@ -1,0 +1,19 @@
+import * as z from "zod";
+
+export const wardrobeFormSchema = z.object({
+  title: z.string().min(3, "Title must be at least 3 characters"),
+  description: z
+    .string()
+    .min(3, "Description must be at least 3 characters")
+    .max(400, "Description must be less than 400 characters"),
+  image: z.string(),
+  category: z.enum([
+    "Head",
+    "Coat",
+    "Sweater",
+    "Shirt",
+    "Trousers",
+    "Socks",
+    "Shoes",
+  ]),
+});
