@@ -1,4 +1,4 @@
-import WardrobeForm from "@/components/shared/wardrobeForm";
+import WardrobeForm from "@/components/shared/WardrobeForm";
 import { Button } from "@/components/ui/shadcn/button";
 import { Input } from "@/components/ui/shadcn/input";
 import { Label } from "@/components/ui/shadcn/label";
