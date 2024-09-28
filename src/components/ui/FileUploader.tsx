@@ -25,7 +25,7 @@ export function FileUploader({
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     maxFiles: 1,
-    accept: { "image/*": ["*"] },
+    accept: { "image/*": [".jpg", ".jpeg", ".png", ".svg"] }, // Corrected accept property
     maxSize: 5000000,
   });
 

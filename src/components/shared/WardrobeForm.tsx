@@ -21,6 +21,7 @@ import { Button } from "../ui/button";
 
 const WardrobeForm = () => {
   const [file, setFile] = useState<File | null>(null);
+  const [isChecked, setIsChecked] = useState(false);
   const initialValues = {
     title: "",
     size: "",
@@ -62,7 +63,7 @@ const WardrobeForm = () => {
               <FormItem className="w-full">
                 <FormControl>
                   <Textarea
-                    placeholder="Description"
+                    placeholder="Name"
                     {...field}
                     className="textarea rounded-md"
                   />
@@ -78,7 +79,7 @@ const WardrobeForm = () => {
               <FormItem className="w-full">
                 <FormControl>
                   <Input
-                    placeholder="This will be a dropdown"
+                    placeholder="Size"
                     {...field}
                     className="input-field"
                   />
@@ -93,10 +94,15 @@ const WardrobeForm = () => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <Textarea
-                    placeholder="This will be a dropdown for sold out"
+                  <Input
+                    type="checkbox"
+                    onClick={() => {
+                      setIsChecked(!isChecked);
+                      field.onChange(!isChecked);
+                    }}
+                    checked={isChecked} // Use checked instead of value
                     {...field}
-                    value={String(field.value)} // Convert boolean to string
+                    className="checkbox-field"
                   />
                 </FormControl>
                 <FormMessage />

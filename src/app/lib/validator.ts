@@ -12,7 +12,7 @@ import * as z from "zod";
 // BUYER-FORM: +order_size + order_price + added to cart?
 
 export const wardrobeFormSchema = z.object({
-  title: z.string().min(3, "Title must be at least 3 characters"),
+  title: z.string().min(3, "Name must be at least 3 characters"),
   size: z.string().min(3, "Size must be at least 3 characters"),
   //size: z.enum(["Small", "Medium", "Large"]),
   price: z.string().min(3, "Price must be at least 3 characters"),
