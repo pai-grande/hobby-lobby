@@ -22,6 +22,8 @@ const WardrobeForm = () => {
   const [file, setFile] = useState<File | null>(null);
   const initialValues = {
     title: "",
+    price: "",
+    size: "",
     description: "",
     image: "",
     category: "Head" as
@@ -64,7 +66,23 @@ const WardrobeForm = () => {
               <FormItem className="w-full">
                 <FormControl>
                   <Input
-                    placeholder="Clothing title"
+                    placeholder="Piece name"
+                    {...field}
+                    className="input-field"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="size"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <Input
+                    placeholder="Piece name"
                     {...field}
                     className="input-field"
                   />
