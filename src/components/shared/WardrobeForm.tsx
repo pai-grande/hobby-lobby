@@ -2,6 +2,7 @@
 
 import { wardrobeFormSchema } from "@/app/lib/validator";
 import { uploadImage } from "@/app/lib/actions_supabase";
+import { PieceSizeEnum } from "@/enums/wardrobe.enums";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FileUploader } from "../ui/FileUploader";
 import { useForm } from "react-hook-form";
@@ -22,18 +23,11 @@ const WardrobeForm = () => {
   const [file, setFile] = useState<File | null>(null);
   const initialValues = {
     title: "",
-    price: "",
     size: "",
+    price: "",
     description: "",
     image: "",
-    category: "Head" as
-      | "Head"
-      | "Coat"
-      | "Sweater"
-      | "Shirt"
-      | "Trousers"
-      | "Socks"
-      | "Shoes",
+    sold_out: false,
   };
 
   const form = useForm<z.infer<typeof wardrobeFormSchema>>({
@@ -41,6 +35,7 @@ const WardrobeForm = () => {
     defaultValues: initialValues,
   });
   async function onSubmit(values: z.infer<typeof wardrobeFormSchema>) {
+    console.log("values: ", values);
     let uploadedImageUrl = values.image;
     try {
       if (file) {
@@ -48,6 +43,7 @@ const WardrobeForm = () => {
         formData.append("file", file);
         uploadedImageUrl = (await uploadImage(formData)) || uploadedImageUrl;
       }
+      console.log("values: ", values);
     } catch (error) {
       console.log("Error while uploading file: ", error);
     }
@@ -65,10 +61,10 @@ const WardrobeForm = () => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <Input
-                    placeholder="Piece name"
+                  <Textarea
+                    placeholder="Description"
                     {...field}
-                    className="input-field"
+                    className="textarea rounded-md"
                   />
                 </FormControl>
                 <FormMessage />
@@ -82,9 +78,25 @@ const WardrobeForm = () => {
               <FormItem className="w-full">
                 <FormControl>
                   <Input
-                    placeholder="Piece name"
+                    placeholder="This will be a dropdown"
                     {...field}
                     className="input-field"
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="sold_out"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <Textarea
+                    placeholder="This will be a dropdown for sold out"
+                    {...field}
+                    value={String(field.value)} // Convert boolean to string
                   />
                 </FormControl>
                 <FormMessage />

@@ -14,19 +14,13 @@ import * as z from "zod";
 export const wardrobeFormSchema = z.object({
   title: z.string().min(3, "Title must be at least 3 characters"),
   size: z.string().min(3, "Size must be at least 3 characters"),
+  //size: z.enum(["Small", "Medium", "Large"]),
   price: z.string().min(3, "Price must be at least 3 characters"),
   description: z
     .string()
     .min(3, "Description must be at least 3 characters")
     .max(400, "Description must be less than 400 characters"),
   image: z.string(),
-  category: z.enum([
-    "Head",
-    "Coat",
-    "Sweater",
-    "Shirt",
-    "Trousers",
-    "Socks",
-    "Shoes",
-  ]),
+  // image_2: long (2 images smaller)
+  sold_out: z.boolean(),
 });
