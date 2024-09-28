@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## TODO:
+
+# `WardrobeForm`
+
+Component: `wardrobeFormSchema`
+Path `/src/app/lib/validator.ts`
+
+- [ ] Add 1 or 2 images to schema.
+- [ ] Size should be dropdown (we can use replace category)
+- [ ] Display size guide
+- [ ] Price should be number
+- [ ] Add buyer form
+
 ## Getting Started
 
 First, run the development server:
